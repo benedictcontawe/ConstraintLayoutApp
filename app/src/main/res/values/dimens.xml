@@ -1,0 +1,22 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="drawable_padding">5dp</dimen>
+    <!--region Margin-->
+    <dimen name="margin_top_start_end_bottom_quarter">4dp</dimen>
+    <dimen name="margin_top_start_end_bottom_half">8dp</dimen>
+    <dimen name="margin_top_start_end_bottom">16dp</dimen>
+    <dimen name="margin_top_start_end_bottom_double">32dp</dimen>
+    <!--endregion-->
+    <!--region Card View-->
+    <dimen name="card_view_radius">5dp</dimen>
+    <dimen name="cardMinElevation">2dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="cardMaxElevation">5dp</dimen>
+    <!--endregion-->
+    <!--Auto Size UI XML Components-->
+    <dimen name="auto_size_min_text_size">5sp</dimen>
+    <dimen name="auto_size_max_text_size">200sp</dimen>
+    <dimen name="auto_size_step_granularity">1sp</dimen>
+    <!--endregion-->
+
+</resources>

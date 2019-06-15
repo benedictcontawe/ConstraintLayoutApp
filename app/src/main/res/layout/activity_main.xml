@@ -1,0 +1,753 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity">
+
+    <!--region Guide lines-->
+    <!--region Vertical Guide lines-->
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.125"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_65"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_80"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_vertical_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.875"/>
+    <!--endregion-->
+    <!--region Horizontal Guidlines-->
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_logo_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_logo_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_username_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_username_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.435" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_password_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.445" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_password_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_in_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_in_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.555" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_or_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.565" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_or_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.605" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_in_email_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.62" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_in_email_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.665" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_log_in_facebook_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.675" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_log_in_facebook_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.72" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_need_an_account_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.765" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_need_an_account_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.80" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_up_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.805" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/constraint_guideline_horizontal_sign_up_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+    <!--endregion-->
+    <!--endregion-->
+    <!--region Background-->
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ic_ice_flakes_black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/yellow_transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+    <!--endregion-->
+    <!--region UI XML Components-->
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/iv_main_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_logo_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_logo_bottom"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_username"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_view_radius"
+        app:cardElevation="@dimen/cardMinElevation"
+        app:cardMaxElevation="@dimen/cardMaxElevation"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_username_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_5"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_95"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_username_bottom">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--region Guide lines-->
+            <!--region Vertical Guide lines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.025"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.975"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--region Horizontal Guidlines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10"/>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--endregion-->
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_username"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_username"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="Username"
+                android:imeOptions="actionNext"
+                android:inputType="textNoSuggestions|text"
+                android:maxLines="1"
+                android:textAlignment="center"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_view_radius"
+        app:cardElevation="@dimen/cardMinElevation"
+        app:cardMaxElevation="@dimen/cardMaxElevation"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_password_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_5"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_95"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_password_bottom">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--region Guide lines-->
+            <!--region Vertical Guide lines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.025"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.975"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--region Horizontal Guidlines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10"/>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90"/>
+            <!--endregion-->
+            <!--endregion-->
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_password"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:hint="Password"
+                android:imeOptions="actionDone"
+                android:inputType="textNoSuggestions|textPassword"
+                android:maxLines="1"
+                android:textAlignment="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+                app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+                app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/btn_sign_in"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/capsule_sign_in"
+        android:elevation="@dimen/cardElevation"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_sign_in_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_35"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_65"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_sign_in_bottom">
+        <!--region Guide lines-->
+        <!--region Vertical Guide lines-->
+        <android.support.constraint.Guideline
+            android:id="@+id/constraint_guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10"
+            tools:ignore="DuplicateIds" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/constraint_guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.90"
+            tools:ignore="DuplicateIds" />
+        <!--endregion-->
+        <!--region Horizontal Guidlines-->
+        <android.support.constraint.Guideline
+            android:id="@+id/constraint_guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10"
+            tools:ignore="DuplicateIds" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/constraint_guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.80"
+            tools:ignore="DuplicateIds" />
+        <!--endregion-->
+        <!--endregion-->
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sign in"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+            app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+            app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+            app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+            app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+            app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_or"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="or"
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+        app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+        app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_or_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_or_bottom"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/btn_sign_in_email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/green_sign_in_email"
+        app:cardCornerRadius="@dimen/card_view_radius"
+        app:cardElevation="@dimen/cardMinElevation"
+        app:cardMaxElevation="@dimen/cardMaxElevation"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_sign_in_email_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_20"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_80"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_sign_in_email_bottom">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--region Guide lines-->
+            <!--region Vertical Guide lines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.03"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--region Horizontal Guidlines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--endregion-->
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="Sign in with Email"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+                app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+                app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/btn_sign_in_facebook"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/dark_blue_facebook"
+        app:cardCornerRadius="@dimen/card_view_radius"
+        app:cardElevation="@dimen/cardElevation"
+        app:cardMaxElevation="@dimen/cardMaxElevation"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_log_in_facebook_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_20"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_80"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_log_in_facebook_bottom">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--region Guide lines-->
+            <!--region Vertical Guide lines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.03"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--region Horizontal Guidlines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.10"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.90"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--endregion-->
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:visibility="gone"
+                android:id="@+id/iv_facebook_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_facebook"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:drawableLeft="@drawable/ic_facebook"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableStart="@drawable/ic_facebook"
+                android:text="Log in with Facebook"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+                app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+                app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_need_an_account"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Need an account?"
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+        app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+        app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_need_an_account_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_need_an_account_bottom"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/btn_sign_up"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:cardBackgroundColor="@color/light_blue_sign_up"
+        app:cardCornerRadius="@dimen/card_view_radius"
+        app:cardElevation="@dimen/cardElevation"
+        app:cardMaxElevation="@dimen/cardMaxElevation"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_sign_up_top"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_35"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_65"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_sign_up_bottom">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--region Guide lines-->
+            <!--region Vertical Guide lines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.03"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--region Horizontal Guidlines-->
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.05"
+                tools:ignore="DuplicateIds" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/constraint_guideline_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.80"
+                tools:ignore="DuplicateIds" />
+            <!--endregion-->
+            <!--endregion-->
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Sign up"
+                android:textColor="@color/white"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="center"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+                app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+                app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
+                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
+                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+    <!--endregion-->
+</android.support.constraint.ConstraintLayout>
