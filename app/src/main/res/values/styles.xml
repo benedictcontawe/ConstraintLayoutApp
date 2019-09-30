@@ -8,4 +8,26 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CustomTextStyle">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CustomTitleTextStyle" parent="CustomTextStyle">
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="CustomTitleExpandedTextStyle" parent="CustomTitleTextStyle">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="CustomDescriptionTextStyle" parent="CustomTextStyle">
+        <item name="android:gravity">start|top</item>
+        <item name="android:maxLines">6</item>
+        <item name="android:ellipsize">none</item>
+        <item name="android:font">@string/roboto_condensed</item>
+        <item name="android:textColor">#80FAFAFA</item>
+    </style>
+
 </resources>
