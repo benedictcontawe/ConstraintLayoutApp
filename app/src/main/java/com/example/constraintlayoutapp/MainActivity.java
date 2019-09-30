@@ -24,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        descriptionContainer = (ConstraintLayout) findViewById(R.id.descriptionContainer);
-        descriptionImage = (ImageView) findViewById(R.id.descriptionImage);
-        description = (TextView) findViewById(R.id.description);
+        setInstanceId();
     }
 
     @Override
@@ -35,8 +33,15 @@ public class MainActivity extends AppCompatActivity {
         setConstraint();
     }
 
+    @Deprecated //This is for sample_layout only
+    private void  setInstanceId() {
+        descriptionContainer = (ConstraintLayout) findViewById(R.id.descriptionContainer);
+        descriptionImage = (ImageView) findViewById(R.id.descriptionImage);
+        description = (TextView) findViewById(R.id.description);
+    }
+
+    @Deprecated //This is for sample_layout only
     private void setConstraint() {
-        //This is for sample_layout only
         //descriptionContainer
         //descriptionImage
         //description
