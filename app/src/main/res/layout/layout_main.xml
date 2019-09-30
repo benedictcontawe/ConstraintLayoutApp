@@ -139,43 +139,89 @@
     <!--endregion-->
     <!--region UI XML Components-->
     <View
+        android:id="@+id/fifth_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_4"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_4"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_6"/>
+
+    <View
         android:id="@+id/first_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
-        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_7"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_4"
         app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_4"
         app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
-        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_8"/>
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_5"/>
 
     <View
         android:id="@+id/second_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
-        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_8"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_4"
         app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_4"
-        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
-        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_9"/>
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_5"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_6"/>
 
     <View
         android:id="@+id/third_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/black"
-        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_1"
-        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_1"
-        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_2"
-        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_2"/>
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_4"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_5"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_6"/>
+
+    <View
+        android:id="@+id/forth_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_5"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_4"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_6"/>
 
     <Button
-        android:id="@+id/btnConstraint"
+        android:id="@+id/btnContract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Constraint"
+        android:text="Contract"
+        android:textAllCaps="false"
+        android:textSize="12sp"
         app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_1"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_3"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnExpand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Expand"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_9"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_4"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_6"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnScatter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scatter"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="@id/constraint_guideline_horizontal_9"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_7"
+        app:layout_constraintEnd_toEndOf="@id/constraint_guideline_vertical_9"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <!--endregion-->
 </androidx.constraintlayout.widget.ConstraintLayout>
