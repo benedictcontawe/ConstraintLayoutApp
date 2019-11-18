@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.constraintlayout.widget.Guideline;
+import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintExpand() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        delayTransition(1000L);
         constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
         //Connect firstView constraintSet
@@ -111,7 +112,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintContract() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        delayTransition(1000L);
         constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
         //Connect firstView constraintSet
@@ -144,7 +145,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintScatter() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        delayTransition(1000L);
         constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
         //Connect firstView constraintSet -> app:layout_constraintTop_toTopOf="parent"
@@ -162,6 +163,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         constraintSet.setVisibility(fifthView.getId(),ConstraintSet.INVISIBLE);
         //Apply Constraint Set to Constraint Layout
         constraintSet.applyTo(constraintLayoutMain);
+    }
+
+    private void delayTransition(Long duration) {
+        AutoTransition transition = new AutoTransition();
+        transition.setDuration(duration); //Delay to animation duration
+        TransitionManager.beginDelayedTransition(constraintLayoutMain, transition); //Delay to animate
     }
 
     private void clearFirst() {
