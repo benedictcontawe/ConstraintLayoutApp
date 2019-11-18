@@ -2,12 +2,10 @@ package com.example.constraintlayoutapp
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
-import androidx.constraintlayout.widget.Guideline
+import androidx.transition.AutoTransition
 import androidx.transition.TransitionManager
 import kotlinx.android.synthetic.main.layout_main.*
 
@@ -40,8 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun animateConstraintExpand() {
-        TransitionManager.beginDelayedTransition(constraint_layout_main!!) //Delay to animate
-        constraintSet.clone(constraint_layout_main!!) //Clone first constraint set of the parent must be Constraint Layout
+        delayTransition(200L)
+        constraintSet.clone(constraint_layout_main) //Clone first constraint set of the parent must be Constraint Layout
         clearFirst()
         //Connect first_view constraintSet
         constraintSet.connect(first_view.id, ConstraintSet.TOP, constraint_guideline_horizontal_1.id, ConstraintSet.TOP)
@@ -69,12 +67,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Set Visibility to visible fifth_view constraintSet
         constraintSet.setVisibility(fifth_view.id, ConstraintSet.VISIBLE)
         //Apply Constraint Set to Constraint Layout
-        constraintSet.applyTo(constraint_layout_main!!)
+        constraintSet.applyTo(constraint_layout_main)
     }
 
     private fun animateConstraintContract() {
-        TransitionManager.beginDelayedTransition(constraint_layout_main!!) //Delay to animate
-        constraintSet.clone(constraint_layout_main!!) //Clone first constraint set of the parent must be Constraint Layout
+        delayTransition(200L)
+        constraintSet.clone(constraint_layout_main) //Clone first constraint set of the parent must be Constraint Layout
         clearFirst()
         //Connect first_view constraintSet
         constraintSet.connect(first_view.id, ConstraintSet.TOP, constraint_guideline_horizontal_4.id, ConstraintSet.TOP)
@@ -102,12 +100,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Set Visibility to visible fifth_view constraintSet
         constraintSet.setVisibility(fifth_view.id, ConstraintSet.VISIBLE)
         //Apply Constraint Set to Constraint Layout
-        constraintSet.applyTo(constraint_layout_main!!)
+        constraintSet.applyTo(constraint_layout_main)
     }
 
     private fun animateConstraintScatter() {
-        TransitionManager.beginDelayedTransition(constraint_layout_main!!) //Delay to animate
-        constraintSet.clone(constraint_layout_main!!) //Clone first constraint set of the parent must be Constraint Layout
+        delayTransition(200L)
+        constraintSet.clone(constraint_layout_main) //Clone first constraint set of the parent must be Constraint Layout
         clearFirst()
         //Connect first_view constraintSet -> app:layout_constraintTop_toTopOf="parent"
         constraintSet.connect(first_view.id, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP)
@@ -123,7 +121,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         //Set Visibility to invisible fifth_view constraintSet -> android:visibility="invisible"
         constraintSet.setVisibility(fifth_view.id, ConstraintSet.INVISIBLE)
         //Apply Constraint Set to Constraint Layout
-        constraintSet.applyTo(constraint_layout_main!!)
+        constraintSet.applyTo(constraint_layout_main)
+    }
+
+    private fun delayTransition(duration : Long) {
+        val transition : AutoTransition = AutoTransition()
+        transition.duration = duration //Delay to animation duration
+        TransitionManager.beginDelayedTransition(constraint_layout_main, transition) //Delay to animate
     }
 
     private fun clearFirst() {
