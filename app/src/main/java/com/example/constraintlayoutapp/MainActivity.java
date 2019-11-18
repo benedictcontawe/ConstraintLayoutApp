@@ -78,8 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintExpand() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain);
-        constraintSet.clone(constraintLayoutMain);
+        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
         //Connect firstView constraintSet
         constraintSet.connect(firstView.getId(), ConstraintSet.TOP, constraintGuidelineHorizontal1.getId(), ConstraintSet.TOP);
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintContract() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain);
-        constraintSet.clone(constraintLayoutMain);
+        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
         //Connect firstView constraintSet
         constraintSet.connect(firstView.getId(), ConstraintSet.TOP, constraintGuidelineHorizontal4.getId(), ConstraintSet.TOP);
@@ -144,21 +144,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void animateConstraintScatter() {
-        TransitionManager.beginDelayedTransition(constraintLayoutMain);
-        constraintSet.clone(constraintLayoutMain);
+        TransitionManager.beginDelayedTransition(constraintLayoutMain); //Delay to animate
+        constraintSet.clone(constraintLayoutMain); //Clone first constraint set of the parent must be Constraint Layout
         clearFirst();
-        //Connect firstView constraintSet
+        //Connect firstView constraintSet -> app:layout_constraintTop_toTopOf="parent"
         constraintSet.connect(firstView.getId(), ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP);
         clearSecond();
-        //Connect secondView constraintSet
+        //Connect secondView constraintSet -> app:layout_constraintStart_toStartOf="parent"
         constraintSet.connect(secondView.getId(), ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START);
         clearThird();
-        //Connect thirdView constraintSet
+        //Connect thirdView constraintSet -> app:layout_constraintEnd_toEndOf="parent"
         constraintSet.connect(thirdView.getId(), ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END);
         clearForth();
-        //Connect forthView constraintSet
+        //Connect forthView constraintSet -> app:layout_constraintBottom_toBottomOf="parent"
         constraintSet.connect(forthView.getId(), ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM);
-        //Set Visibility to invisible fifthView constraintSet
+        //Set Visibility to invisible fifthView constraintSet -> android:visibility="invisible"
         constraintSet.setVisibility(fifthView.getId(),ConstraintSet.INVISIBLE);
         //Apply Constraint Set to Constraint Layout
         constraintSet.applyTo(constraintLayoutMain);
@@ -166,34 +166,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void clearFirst() {
         //Clear firstView constraintSet
-        constraintSet.clear(firstView.getId(),ConstraintSet.TOP);
-        constraintSet.clear(firstView.getId(),ConstraintSet.START);
-        constraintSet.clear(firstView.getId(),ConstraintSet.END);
-        constraintSet.clear(firstView.getId(),ConstraintSet.BOTTOM);
+        constraintSet.clear(firstView.getId(),ConstraintSet.TOP); //app:layout_constraintTop_toTopOf="@null"
+        constraintSet.clear(firstView.getId(),ConstraintSet.START); //app:layout_constraintStart_toStartOf="@null"
+        constraintSet.clear(firstView.getId(),ConstraintSet.END); //app:layout_constraintEnd_toEndOf="@null"
+        constraintSet.clear(firstView.getId(),ConstraintSet.BOTTOM); //app:layout_constraintBottom_toBottomOf="@null"
     }
 
     private void clearSecond() {
         //Clear secondView constraintSet
-        constraintSet.clear(secondView.getId(),ConstraintSet.TOP);
-        constraintSet.clear(secondView.getId(),ConstraintSet.END);
-        constraintSet.clear(secondView.getId(),ConstraintSet.START);
-        constraintSet.clear(secondView.getId(),ConstraintSet.BOTTOM);
+        constraintSet.clear(secondView.getId(),ConstraintSet.TOP); //app:layout_constraintTop_toTopOf="@null"
+        constraintSet.clear(secondView.getId(),ConstraintSet.END); //app:layout_constraintStart_toStartOf="@null"
+        constraintSet.clear(secondView.getId(),ConstraintSet.START); //app:layout_constraintEnd_toEndOf="@null"
+        constraintSet.clear(secondView.getId(),ConstraintSet.BOTTOM); //app:layout_constraintBottom_toBottomOf="@null"
     }
 
     private void clearThird() {
         //Clear thirdView constraintSet
-        constraintSet.clear(thirdView.getId(),ConstraintSet.TOP);
-        constraintSet.clear(thirdView.getId(),ConstraintSet.END);
-        constraintSet.clear(thirdView.getId(),ConstraintSet.START);
-        constraintSet.clear(thirdView.getId(),ConstraintSet.BOTTOM);
+        constraintSet.clear(thirdView.getId(),ConstraintSet.TOP); //app:layout_constraintTop_toTopOf="@null"
+        constraintSet.clear(thirdView.getId(),ConstraintSet.END); //app:layout_constraintStart_toStartOf="@null"
+        constraintSet.clear(thirdView.getId(),ConstraintSet.START); //app:layout_constraintEnd_toEndOf="@null"
+        constraintSet.clear(thirdView.getId(),ConstraintSet.BOTTOM); //app:layout_constraintBottom_toBottomOf="@null"
     }
 
     private void clearForth() {
         //Clear forthView constraintSet
-        constraintSet.clear(forthView.getId(),ConstraintSet.TOP);
-        constraintSet.clear(forthView.getId(),ConstraintSet.END);
-        constraintSet.clear(forthView.getId(),ConstraintSet.START);
-        constraintSet.clear(forthView.getId(),ConstraintSet.BOTTOM);
+        constraintSet.clear(forthView.getId(),ConstraintSet.TOP); //app:layout_constraintTop_toTopOf="@null"
+        constraintSet.clear(forthView.getId(),ConstraintSet.END); //app:layout_constraintStart_toStartOf="@null"
+        constraintSet.clear(forthView.getId(),ConstraintSet.START); //app:layout_constraintEnd_toEndOf="@null"
+        constraintSet.clear(forthView.getId(),ConstraintSet.BOTTOM); //app:layout_constraintBottom_toBottomOf="@null"
     }
 
 }
