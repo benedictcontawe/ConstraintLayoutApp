@@ -281,30 +281,32 @@
                 tools:ignore="DuplicateIds" />
             <!--endregion-->
             <!--endregion-->
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_username"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
-                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
-                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_username"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@null"
-                android:hint="Username"
-                android:imeOptions="actionNext"
-                android:inputType="textNoSuggestions|text"
-                android:maxLines="1"
-                android:textAlignment="center"
+                app:boxBackgroundColor="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawablePadding="10dp"
+                    android:hint="Username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textNoSuggestions|text"
+                    android:maxLines="1"
+                    android:paddingStart="0dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:drawableStartCompat="@drawable/ic_username" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -364,34 +366,35 @@
                 tools:ignore="DuplicateIds" />
             <!--endregion-->
             <!--endregion-->
-            <androidx.appcompat.widget.AppCompatImageView
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/ic_password"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintTop_toTopOf="@id/constraint_guideline_top"
-                app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
-                app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_bottom"/>
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/et_password"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="@null"
-                android:hint="Password"
-                android:imeOptions="actionDone"
-                android:inputType="textNoSuggestions|textPassword"
-                android:maxLines="1"
-                android:textAlignment="center"
-                app:autoSizeTextType="uniform"
-                app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
-                app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
-                app:autoSizeStepGranularity="@dimen/auto_size_step_granularity"
+                app:boxBackgroundColor="@color/white"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="@id/constraint_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/constraint_guideline_end"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:drawablePadding="10dp"
+                    android:hint="Password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textNoSuggestions|textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="0dp"
+                    android:singleLine="true"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="@dimen/auto_size_min_text_size"
+                    app:autoSizeMaxTextSize="@dimen/auto_size_max_text_size"
+                    app:drawableStartCompat="@drawable/ic_username" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
