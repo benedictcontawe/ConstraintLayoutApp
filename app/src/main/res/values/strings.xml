@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ConstraintLayoutApp</string>
+    <string name="android">Android</string>
+    <string name="extended">Extended</string>
+    <string name="extended_one">Extended 1</string>
+    <string name="extended_two">Extended 2</string>
+    <string name="extended_three">Extended 3</string>
+    <string name="extended_four">Extended 4</string>
 </resources>

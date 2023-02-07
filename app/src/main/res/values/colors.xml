@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
-    <!--basic Colours-->
-    <color name="white">#FFF</color>
-    <color name="black">#000</color>
-    <color name="yellow">#FFFF00</color>
-    <!--Text Color-->
-    <color name="text_hint">#808080</color>
-    <!--background colours-->
-    <color name="dark_blue_facebook">#183f9c</color>
-    <color name="light_blue_facebook">#475993</color>
-    <color name="green_sign_in_email">#97c32e</color>
-    <color name="light_blue_sign_up">#0599e3</color>
-    <color name="light_gray_sign_in">#bebebe</color>
-    <color name="border_line_sign_in">#A3A3A3</color>
-    <!--transparent colours-->
-    <color name="transparent">#0DFFFFFF</color>
-    <color name="yellow_transparent">#B3FDDB00</color>
-
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#FF0000</color>
 </resources>

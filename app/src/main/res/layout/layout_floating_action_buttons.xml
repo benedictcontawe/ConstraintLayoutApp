@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_leading"
+        app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_bottom" >
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_floating_action_button_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_13dp"
+            android:contentDescription="@string/extended_one"
+            android:drawingCacheQuality="high"
+            android:scaleType="fitXY"
+            android:text="@string/extended_one"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/purple_200"
+            app:fabSize="auto"
+            app:icon="@drawable/ic_android_red"
+            app:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_two" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_floating_action_button_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_13dp"
+            android:contentDescription="@string/extended_two"
+            android:drawingCacheQuality="high"
+            android:scaleType="fitXY"
+            android:text="@string/extended_two"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/purple_200"
+            app:fabSize="auto"
+            app:icon="@drawable/ic_android_red"
+            app:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_three" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_floating_action_button_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_13dp"
+            android:contentDescription="@string/extended_three"
+            android:drawingCacheQuality="high"
+            android:scaleType="fitXY"
+            android:text="@string/extended_three"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/purple_200"
+            app:fabSize="auto"
+            app:icon="@null"
+            app:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_four" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/extended_floating_action_button_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_13dp"
+            android:contentDescription="@string/extended_four"
+            android:drawingCacheQuality="high"
+            android:scaleType="fitXY"
+            android:text="@string/extended_four"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/purple_200"
+            app:fabSize="auto"
+            app:icon="@drawable/ic_android_red"
+            app:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/floating_action_button_android" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button_android"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_13dp"
+            android:contentDescription="@string/android"
+            android:drawingCacheQuality="high"
+            android:scaleType="fitXY"
+            app:backgroundTint="@color/purple_200"
+            app:fabSize="auto"
+            app:srcCompat="@drawable/ic_android_red"
+            app:tint="@color/white"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
