@@ -86,12 +86,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //delayTransition(binder.constraintLayout, 250L);
                         //constraintSet.clone(binder.constraintLayout);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.TOP);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.BOTTOM);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.START);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.END);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.TOP, binder.constraintGuidelineHorizontalTop.getId(), ConstraintSet.TOP);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.END, binder.constraintGuidelineVerticalTrailing.getId(), ConstraintSet.END);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.TOP);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.BOTTOM);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.START);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.END);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.TOP, binder.constraintGuidelineHorizontalTop.getId(), ConstraintSet.TOP);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.END, binder.constraintGuidelineVerticalTrailing.getId(), ConstraintSet.END);
                         //constraintSet.applyTo(binder.constraintLayout);
                     break;
                     case BOTTOM_LEAD:
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         //delayTransition(binder.constraintLayout, 250L);
                         //constraintSet.clone(binder.constraintLayout);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.TOP);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.BOTTOM);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.START);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.END);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.BOTTOM, binder.constraintGuidelineHorizontalBottom.getId(), ConstraintSet.BOTTOM);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.START, binder.constraintGuidelineVerticalLeading.getId(), ConstraintSet.START);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.TOP);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.BOTTOM);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.START);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.END);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.BOTTOM, binder.constraintGuidelineHorizontalBottom.getId(), ConstraintSet.BOTTOM);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.START, binder.constraintGuidelineVerticalLeading.getId(), ConstraintSet.START);
                         //constraintSet.applyTo(binder.constraintLayout);
                     break;
                     case BOTTOM_TRAIL:
@@ -123,13 +123,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         constraintSet.applyTo(binder.floatingActionButtons.constraintLayout);
 
                         //delayTransition(binder.constraintLayout, 250L);
-                        //constraintSet.clone(binder.constraintLayout);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.TOP);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.BOTTOM);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.START);
-                        //constraintSet.clear(binder.constraintLayout.getId(),ConstraintSet.END);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.BOTTOM, binder.constraintGuidelineHorizontalBottom.getId(), ConstraintSet.BOTTOM);
-                        //constraintSet.connect(binder.constraintLayout.getId(), ConstraintSet.END, binder.constraintGuidelineVerticalTrailing.getId(), ConstraintSet.END);
+                        //constraintSet.clone(binder.floatingActionButtons.constraintLayout);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.TOP);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.BOTTOM);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.START);
+                        //constraintSet.clear(binder.floatingActionButtons.constraintLayout.getId(),ConstraintSet.END);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.BOTTOM, binder.constraintGuidelineHorizontalBottom.getId(), ConstraintSet.BOTTOM);
+                        //constraintSet.connect(binder.floatingActionButtons.constraintLayout.getId(), ConstraintSet.END, binder.constraintGuidelineVerticalTrailing.getId(), ConstraintSet.END);
                         //constraintSet.applyTo(binder.constraintLayout);
                     break;
                     default:
