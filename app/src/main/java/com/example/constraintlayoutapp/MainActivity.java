@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .y( binder.getViewModel().getNewY() )
                         .setDuration(0)
                         .start();
+                binder.getViewModel().checkEdge(layoutParams);
                 return true; //Consumed
             case MotionEvent.ACTION_UP:
                 float upRawX = motionEvent.getRawX();

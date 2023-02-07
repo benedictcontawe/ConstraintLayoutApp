@@ -1,5 +1,6 @@
 package com.example.constraintlayoutapp;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -10,6 +11,7 @@ import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
+    private static final String TAG = MainViewModel.class.getSimpleName();
     private final static float CLICK_DRAG_TOLERANCE = 10;
     private float downRawX, downRawY, dX, dY, newX, newY;
     private int viewWidth, viewHeight, parentWidth, parentHeight;
@@ -20,11 +22,11 @@ public class MainViewModel extends ViewModel {
     }
 
     public void setLiveFABVisibility() {
-        if (liveFABVisibility.getValue() != null) liveFABVisibility.setValue(!liveFABVisibility.getValue());
-        else liveFABVisibility.setValue(false);
+        if (liveFABVisibility.getValue() != null) setLiveFABVisibility(!liveFABVisibility.getValue());
+        else setLiveFABVisibility(false);
     }
 
-    public void setLiveFABVisibility(boolean isShowed) {
+    private void setLiveFABVisibility(boolean isShowed) {
         liveFABVisibility.setValue(isShowed);
     }
 
@@ -85,6 +87,21 @@ public class MainViewModel extends ViewModel {
 
     public float getNewY() {
         return newY;
+    }
+
+    public void checkEdge(ViewGroup.MarginLayoutParams layoutParams) {
+        boolean isBottom, isTrail;
+        isBottom = newY > ((parentHeight - viewHeight - layoutParams.bottomMargin) / 2);
+        isTrail = newX > ((parentWidth - viewWidth - layoutParams.rightMargin) / 2);
+        if (!isBottom && !isTrail) {
+            Log.d(TAG,"checkEdge Top Lead");
+        } else if (!isBottom && isTrail) {
+            Log.d(TAG,"checkEdge Top Trail");
+        } else if (isBottom && !isTrail) {
+            Log.d(TAG,"checkEdge Bottom Lead");
+        } else if (isBottom && isTrail) {
+            Log.d(TAG,"checkEdge Bottom Trail");
+        }
     }
 
     private void setRippleEffect(View view, long delayMillis) {
