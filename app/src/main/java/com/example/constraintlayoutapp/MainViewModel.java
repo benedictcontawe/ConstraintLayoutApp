@@ -16,9 +16,11 @@ public class MainViewModel extends ViewModel {
     private float downRawX, downRawY, dX, dY, newX, newY;
     private int viewWidth, viewHeight, parentWidth, parentHeight;
     private final MutableLiveData<Boolean> liveFABVisibility;
+    private final MutableLiveData<EdgeEnum> liveEdge;
 
     public MainViewModel() {
         liveFABVisibility = new MutableLiveData<Boolean>(false);
+        liveEdge = new MutableLiveData<EdgeEnum>(EdgeEnum.BOTTOM_LEAD);
     }
 
     public void setLiveFABVisibility() {
@@ -32,6 +34,10 @@ public class MainViewModel extends ViewModel {
 
     public LiveData<Boolean> observeFABVisibility() {
         return liveFABVisibility;
+    }
+
+    public LiveData<EdgeEnum> observeEdge() {
+        return liveEdge;
     }
 
     public void setDownRawX(float downRawX) {
@@ -93,15 +99,10 @@ public class MainViewModel extends ViewModel {
         boolean isBottom, isTrail;
         isBottom = newY > ((parentHeight - viewHeight - layoutParams.bottomMargin) / 2);
         isTrail = newX > ((parentWidth - viewWidth - layoutParams.rightMargin) / 2);
-        if (!isBottom && !isTrail) {
-            Log.d(TAG,"checkEdge Top Lead");
-        } else if (!isBottom && isTrail) {
-            Log.d(TAG,"checkEdge Top Trail");
-        } else if (isBottom && !isTrail) {
-            Log.d(TAG,"checkEdge Bottom Lead");
-        } else if (isBottom && isTrail) {
-            Log.d(TAG,"checkEdge Bottom Trail");
-        }
+        if (!isBottom && !isTrail)  liveEdge.setValue(EdgeEnum.TOP_LEAD);
+        else if (!isBottom && isTrail)  liveEdge.setValue(EdgeEnum.TOP_TRAIL);
+        else if (isBottom && !isTrail)  liveEdge.setValue(EdgeEnum.BOTTOM_LEAD);
+        else if (isBottom && isTrail) liveEdge.setValue(EdgeEnum.BOTTOM_TRAIL);
     }
 
     private void setRippleEffect(View view, long delayMillis) {

@@ -6,6 +6,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +44,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onChanged(Boolean isShowed) {
                 if (isShowed) showExtendedFAB();
                 else hideExtendedFab();
+            }
+        });
+        binder.getViewModel().observeEdge().observe(this, new Observer<EdgeEnum>() {
+            @Override
+            public void onChanged(EdgeEnum edge) {
+                switch (edge) {
+                    case TOP_LEAD:
+                        Log.d(TAG,"checkEdge Top Lead");
+                    break;
+                    case TOP_TRAIL:
+                        Log.d(TAG,"checkEdge Top Trail");
+                    break;
+                    case BOTTOM_LEAD:
+                        Log.d(TAG,"checkEdge Bottom Lead");
+                    break;
+                    case BOTTOM_TRAIL:
+                        Log.d(TAG,"checkEdge Bottom Trail");
+                    break;
+                    default:
+
+                    break;
+                }
             }
         });
     }
