@@ -56,6 +56,14 @@ public class MainViewModel extends ViewModel {
         this.dY = dY;
     }
 
+    public void setNewX(ViewGroup.MarginLayoutParams layoutParams) {
+        if (newX > ((parentWidth - viewWidth - layoutParams.rightMargin) / 2)) {
+            newX = parentWidth - viewWidth - layoutParams.rightMargin;
+        } else {
+            newX = layoutParams.leftMargin;
+        }
+    }
+
     public void setNewX(float rawX, ViewGroup.MarginLayoutParams layoutParams) {
         this.newX = rawX + dX;
         newX = Math.max(layoutParams.leftMargin, newX); // Don't allow the FAB past the left hand side of the parent
@@ -93,6 +101,10 @@ public class MainViewModel extends ViewModel {
 
     public float getNewY() {
         return newY;
+    }
+
+    public void checkEdge() {
+        liveEdge.setValue(liveEdge.getValue());
     }
 
     public void checkEdge(ViewGroup.MarginLayoutParams layoutParams) {

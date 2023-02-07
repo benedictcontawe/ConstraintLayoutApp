@@ -26,7 +26,7 @@
             app:icon="@drawable/ic_android_red"
             app:tint="@color/white"
             app:layout_constraintDimensionRatio="1:0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/constraint_layout"
             app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_two" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -44,7 +44,7 @@
             app:icon="@drawable/ic_android_red"
             app:tint="@color/white"
             app:layout_constraintDimensionRatio="1:0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/constraint_layout"
             app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_three" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -62,7 +62,7 @@
             app:icon="@null"
             app:tint="@color/white"
             app:layout_constraintDimensionRatio="1:0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/constraint_layout"
             app:layout_constraintBottom_toTopOf="@id/extended_floating_action_button_four" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
@@ -80,7 +80,7 @@
             app:icon="@drawable/ic_android_red"
             app:tint="@color/white"
             app:layout_constraintDimensionRatio="1:0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/constraint_layout"
             app:layout_constraintBottom_toTopOf="@id/floating_action_button_android" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -96,7 +96,9 @@
             app:srcCompat="@drawable/ic_android_red"
             app:tint="@color/white"
             app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/constraint_layout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
