@@ -1,6 +1,5 @@
 package com.example.constraintlayoutapp;
 
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -13,7 +12,7 @@ public class MainViewModel extends ViewModel {
 
     private static final String TAG = MainViewModel.class.getSimpleName();
     private final static float CLICK_DRAG_TOLERANCE = 10;
-    private float downRawX, downRawY, dX, dY, newX, newY;
+    private float downRawX, downRawY, dX, dY, newX, newY, upDX, upDY;
     private int viewWidth, viewHeight, parentWidth, parentHeight;
     private final MutableLiveData<Boolean> liveFABVisibility;
     private final MutableLiveData<EdgeEnum> liveEdge;
@@ -22,7 +21,7 @@ public class MainViewModel extends ViewModel {
         liveFABVisibility = new MutableLiveData<Boolean>(false);
         liveEdge = new MutableLiveData<EdgeEnum>(EdgeEnum.BOTTOM_LEAD);
     }
-
+    //region Setter Live FAB Visibility
     public void setLiveFABVisibility() {
         if (liveFABVisibility.getValue() != null) setLiveFABVisibility(!liveFABVisibility.getValue());
         else setLiveFABVisibility(false);
@@ -31,7 +30,8 @@ public class MainViewModel extends ViewModel {
     private void setLiveFABVisibility(boolean isShowed) {
         liveFABVisibility.setValue(isShowed);
     }
-
+    //endregion
+    //region Observables
     public LiveData<Boolean> observeFABVisibility() {
         return liveFABVisibility;
     }
@@ -39,7 +39,8 @@ public class MainViewModel extends ViewModel {
     public LiveData<EdgeEnum> observeEdge() {
         return liveEdge;
     }
-
+    //endregion
+    //region Setter Down Raw X and Down Raw Y
     public void setDownRawX(float downRawX) {
         this.downRawX = downRawX;
     }
@@ -47,7 +48,8 @@ public class MainViewModel extends ViewModel {
     public void setDownRawY(float downRawY) {
         this.downRawY = downRawY;
     }
-
+    //endregion
+    //region Setter dX and dY Methods
     public void setDx(float dX) {
         this.dX = dX;
     }
@@ -55,7 +57,8 @@ public class MainViewModel extends ViewModel {
     public void setDy(float dY) {
         this.dY = dY;
     }
-
+    //endregion
+    //region Setter New X and New Y Methods
     public void setNewX(ViewGroup.MarginLayoutParams layoutParams) {
         if (newX > ((parentWidth - viewWidth - layoutParams.rightMargin) / 2)) {
             newX = parentWidth - viewWidth - layoutParams.rightMargin;
@@ -75,8 +78,16 @@ public class MainViewModel extends ViewModel {
         newY = Math.max(layoutParams.topMargin, newY); // Don't allow the FAB past the top of the parent
         newY = Math.min(parentHeight - viewHeight - layoutParams.bottomMargin, newY); // Don't allow the FAB past the bottom of the parent
     }
+    //endregion
+    //region Setter upDX and upDY
+    public void setUpDx(float upDX) {
+        this.upDX = upDX;
+    }
 
-
+    public void setUpDy(float upDY) {
+        this.upDY = upDY;
+    }
+    //endregion
     public void setViewDimension(View view) {
         this.viewWidth = view.getWidth();
         this.viewHeight = view.getHeight();
@@ -86,7 +97,7 @@ public class MainViewModel extends ViewModel {
         this.parentWidth = ( (View) viewParent ).getWidth();
         this.parentHeight = ( (View) viewParent ).getHeight();
     }
-
+    //region Getter Down Raw X and Down Raw Y Methods
     public float getDownRawX() {
         return downRawX;
     }
@@ -94,7 +105,8 @@ public class MainViewModel extends ViewModel {
     public float getDownRawY() {
         return downRawY;
     }
-
+    //endregion
+    //region Getter New X and New Y Methods
     public float getNewX() {
         return newX;
     }
@@ -102,7 +114,8 @@ public class MainViewModel extends ViewModel {
     public float getNewY() {
         return newY;
     }
-
+    //endregion
+    //region Check Edge Methods
     public void checkEdge() {
         liveEdge.setValue(liveEdge.getValue());
     }
@@ -116,7 +129,7 @@ public class MainViewModel extends ViewModel {
         else if (isBottom && !isTrail)  liveEdge.setValue(EdgeEnum.BOTTOM_LEAD);
         else if (isBottom && isTrail) liveEdge.setValue(EdgeEnum.BOTTOM_TRAIL);
     }
-
+    //endregion
     private void setRippleEffect(View view, long delayMillis) {
         view.postDelayed(new Runnable() {
             @Override
@@ -131,12 +144,8 @@ public class MainViewModel extends ViewModel {
             }
         },delayMillis);
     }
-
-    private boolean canClick(float upDX, float upDY) {
-        return Math.abs(upDX) < CLICK_DRAG_TOLERANCE && Math.abs(upDY) < CLICK_DRAG_TOLERANCE;
-    }
-
-    public boolean canClick(View view, float upDX, float upDY) {
+    //region Can Click Methods
+    public boolean canClick(View view) {
         if (canClick(upDX, upDY)) {
             setRippleEffect(view, 250);
             return view.performClick();
@@ -145,4 +154,9 @@ public class MainViewModel extends ViewModel {
             return true; //Consumed
         }
     }
+
+    private boolean canClick(float upDX, float upDY) {
+        return Math.abs(upDX) < CLICK_DRAG_TOLERANCE && Math.abs(upDY) < CLICK_DRAG_TOLERANCE;
+    }
+    //endregion
 }

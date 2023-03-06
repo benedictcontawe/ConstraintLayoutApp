@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == binder.floatingActionButtons.floatingActionButtonAndroid) {
             binder.getViewModel().setLiveFABVisibility();
-            binder.getViewModel().checkEdge();
+            //binder.getViewModel().checkEdge();
         }
     }
 
@@ -168,16 +168,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .y( binder.getViewModel().getNewY() )
                         .setDuration(0)
                         .start();
-                binder.getViewModel().checkEdge(layoutParams);
+                //binder.getViewModel().checkEdge(layoutParams);
                 return true; //Consumed
             case MotionEvent.ACTION_UP:
                 float upRawX = motionEvent.getRawX();
                 float upRawY = motionEvent.getRawY();
 
-                float upDX = upRawX - binder.getViewModel().getDownRawX();
-                float upDY = upRawY - binder.getViewModel().getDownRawY();
+                binder.getViewModel().setUpDx(upRawX - binder.getViewModel().getDownRawX());
+                binder.getViewModel().setUpDy(upRawY - binder.getViewModel().getDownRawY());
+
                 binder.getViewModel().checkEdge(layoutParams);
-                return binder.getViewModel().canClick(binder.floatingActionButtons.constraintLayout, upDX, upDY);
+                return binder.getViewModel().canClick(binder.floatingActionButtons.constraintLayout);
             default:
                 return super.onTouchEvent(motionEvent);
         }

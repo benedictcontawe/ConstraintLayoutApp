@@ -8,6 +8,7 @@
         android:id="@+id/constraint_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
         app:layout_constraintStart_toStartOf="@id/constraint_guideline_vertical_leading"
         app:layout_constraintBottom_toBottomOf="@id/constraint_guideline_horizontal_bottom" >
 
