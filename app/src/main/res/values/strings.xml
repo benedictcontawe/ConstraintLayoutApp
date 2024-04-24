@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ConstraintLayoutApp</string>
+    <string name="play_or_pause">Play or Pause</string>
 </resources>
