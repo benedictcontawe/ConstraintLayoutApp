@@ -5,6 +5,7 @@ import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.Log
+import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -39,6 +40,7 @@ class MainViewModel : AndroidViewModel {
     }
 
     private fun startWheel() {
+        Log.d(TAG, "startWheel")
         CoroutinesUtils.default(this@MainViewModel, work = {
             while (liveRotateWheel.getValue() == false) {
                 delay(COUNTDOWN_WHEEL_INTERVAL)
@@ -48,7 +50,7 @@ class MainViewModel : AndroidViewModel {
     }
 
     private fun startFlapper() {
-        Log.d(TAG, "startTimer")
+        Log.d(TAG, "startFlapper")
         CoroutinesUtils.default(this@MainViewModel, work = {
             while (liveRotateFlapper.getValue() == false) {
                 delay(COUNTDOWN_FLAPPER_INTERVAL)
@@ -88,14 +90,10 @@ class MainViewModel : AndroidViewModel {
 
     public fun observeFlapper(sector: Int, theme : Resources.Theme) : LiveData<Drawable?> {
         return liveFlapper.map { input : Int? ->
-            if (input != null && input == sector && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                return@map getApplication<Application>().getResources().getDrawable(R.drawable.ic_circle_with_aura_blue, theme)
-            } else if (input != null && input != sector && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                return@map getApplication<Application>().getResources().getDrawable(R.drawable.ic_circle_blue, theme)
-            } else if (input != null && input == sector && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                return@map getApplication<Application>().getResources().getDrawable(R.drawable.ic_circle_with_aura_blue)
-            } else if (input != null && input != sector && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                return@map getApplication<Application>().getResources().getDrawable(R.drawable.ic_circle_blue)
+            if (input != null && input == sector) {
+                return@map ResourcesCompat.getDrawable(getApplication<Application>().getResources(), R.drawable.ic_circle_with_aura_blue, theme)
+            } else if (input != null && input != sector) {
+                return@map ResourcesCompat.getDrawable(getApplication<Application>().getResources(), R.drawable.ic_circle_blue, theme)
             } else {
                 return@map null
             }
