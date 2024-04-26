@@ -71,21 +71,21 @@ class MainViewModel : AndroidViewModel {
     }
 
     private fun updateWheel() {
-        liveCenter.postValue(rotateAngle(liveCenter.getValue()?.plus(ANGLE_INTERVAL)))
-        liveNorthSector.postValue(rotateAngle(liveNorthSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveNorthEastSector.postValue(rotateAngle(liveNorthEastSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveEastSector.postValue(rotateAngle(liveEastSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveSouthEastSector.postValue(rotateAngle(liveSouthEastSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveSouthSector.postValue(rotateAngle(liveSouthSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveSouthWestSector.postValue(rotateAngle(liveSouthWestSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveWestSector.postValue(rotateAngle(liveWestSector.getValue()?.plus(ANGLE_INTERVAL)))
-        liveNorthWestSector.postValue(rotateAngle(liveNorthWestSector.getValue()?.plus(ANGLE_INTERVAL)))
+        liveCenter.postValue(rotateAngle(liveCenter.getValue(), ANGLE_INTERVAL))
+        liveNorthSector.postValue(rotateAngle(liveNorthSector.getValue(), ANGLE_INTERVAL))
+        liveNorthEastSector.postValue(rotateAngle(liveNorthEastSector.getValue(), ANGLE_INTERVAL))
+        liveEastSector.postValue(rotateAngle(liveEastSector.getValue(), ANGLE_INTERVAL))
+        liveSouthEastSector.postValue(rotateAngle(liveSouthEastSector.getValue(), ANGLE_INTERVAL))
+        liveSouthSector.postValue(rotateAngle(liveSouthSector.getValue(), ANGLE_INTERVAL))
+        liveSouthWestSector.postValue(rotateAngle(liveSouthWestSector.getValue(), ANGLE_INTERVAL))
+        liveWestSector.postValue(rotateAngle(liveWestSector.getValue(), ANGLE_INTERVAL))
+        liveNorthWestSector.postValue(rotateAngle(liveNorthWestSector.getValue(), ANGLE_INTERVAL))
     }
 
-    private fun rotateAngle(angle : Float?) : Float {
-        return if (angle == null) 18f
-        else if ((angle + 18f) > 360 ) (angle + 18f) - 360
-        else angle + 18f
+    private fun rotateAngle(angle : Float?, addedAngle : Float) : Float {
+        return if (angle == null) addedAngle
+        else if ((angle + addedAngle) > 360 ) (angle + addedAngle) - 360
+        else angle + addedAngle
     }
 
     public fun observeFlapper(sector: Int, theme : Resources.Theme) : LiveData<Drawable?> {
