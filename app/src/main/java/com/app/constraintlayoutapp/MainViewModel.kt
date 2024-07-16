@@ -1,9 +1,8 @@
-package com.example.constraintlayoutapp
+package com.app.constraintlayoutapp
 
 import android.app.Application
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.util.Log
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.AndroidViewModel

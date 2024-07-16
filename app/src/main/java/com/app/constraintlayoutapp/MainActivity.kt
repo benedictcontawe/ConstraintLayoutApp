@@ -1,4 +1,4 @@
-package com.example.constraintlayoutapp
+package com.app.constraintlayoutapp
 
 import android.animation.Animator
 import android.animation.ObjectAnimator
@@ -17,10 +17,10 @@ import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.vectordrawable.graphics.drawable.Animatable2Compat
-import com.example.constraintlayoutapp.databinding.MainBinder
+import com.app.constraintlayoutapp.databinding.MainBinder
 import com.google.android.material.imageview.ShapeableImageView
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+public class MainActivity : AppCompatActivity(), OnClickListener {
 
     companion object {
         private val TAG : String = MainActivity::class.java.getSimpleName()
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
                 ValueAnimator.ofFloat(oldLayoutParams.circleAngle, angle)
             else
                 ValueAnimator.ofFloat(oldLayoutParams.circleAngle, 360 + angle)
-        valueAnimator.setDuration(400L)
+        valueAnimator.setDuration(500L)
         valueAnimator.addUpdateListener(object : ValueAnimator.AnimatorUpdateListener {
             override fun onAnimationUpdate(animation : ValueAnimator) {
                 val newAngle : Float = animation.getAnimatedValue() as Float

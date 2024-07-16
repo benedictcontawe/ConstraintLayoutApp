@@ -1,4 +1,4 @@
-package com.example.constraintlayoutapp
+package com.app.constraintlayoutapp
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
