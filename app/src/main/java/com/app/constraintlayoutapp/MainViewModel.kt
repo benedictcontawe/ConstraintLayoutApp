@@ -25,14 +25,6 @@ class MainViewModel : AndroidViewModel {
     private val liveRotateWheel : MutableLiveData<Boolean> = MutableLiveData(true)
     private val liveFlapper : MutableLiveData<Int> = MutableLiveData(1)
     private val liveCenter : MutableLiveData<Float> = MutableLiveData(0f)
-    private val liveNorthSector : MutableLiveData<Float> = MutableLiveData(0f)
-    private val liveNorthEastSector : MutableLiveData<Float> = MutableLiveData(45f)
-    private val liveEastSector : MutableLiveData<Float> = MutableLiveData(90f)
-    private val liveSouthEastSector : MutableLiveData<Float> = MutableLiveData(135f)
-    private val liveSouthSector : MutableLiveData<Float> = MutableLiveData(180f)
-    private val liveSouthWestSector : MutableLiveData<Float> = MutableLiveData(225f)
-    private val liveWestSector : MutableLiveData<Float> = MutableLiveData(270f)
-    private val liveNorthWestSector : MutableLiveData<Float> = MutableLiveData(315f)
 
     constructor(application : Application) : super(application) {
 
@@ -71,14 +63,6 @@ class MainViewModel : AndroidViewModel {
 
     private fun updateWheel() {
         liveCenter.postValue(rotateAngle(liveCenter.getValue(), ANGLE_INTERVAL))
-        liveNorthSector.postValue(rotateAngle(liveNorthSector.getValue(), ANGLE_INTERVAL))
-        liveNorthEastSector.postValue(rotateAngle(liveNorthEastSector.getValue(), ANGLE_INTERVAL))
-        liveEastSector.postValue(rotateAngle(liveEastSector.getValue(), ANGLE_INTERVAL))
-        liveSouthEastSector.postValue(rotateAngle(liveSouthEastSector.getValue(), ANGLE_INTERVAL))
-        liveSouthSector.postValue(rotateAngle(liveSouthSector.getValue(), ANGLE_INTERVAL))
-        liveSouthWestSector.postValue(rotateAngle(liveSouthWestSector.getValue(), ANGLE_INTERVAL))
-        liveWestSector.postValue(rotateAngle(liveWestSector.getValue(), ANGLE_INTERVAL))
-        liveNorthWestSector.postValue(rotateAngle(liveNorthWestSector.getValue(), ANGLE_INTERVAL))
     }
 
     private fun rotateAngle(angle : Float?, addedAngle : Float) : Float {
@@ -87,7 +71,7 @@ class MainViewModel : AndroidViewModel {
         else angle + addedAngle
     }
 
-    public fun observeFlapper(sector: Int, theme : Resources.Theme) : LiveData<Drawable?> {
+    public fun observeFlapper(sector : Int, theme : Resources.Theme) : LiveData<Drawable?> {
         return liveFlapper.map { input : Int? ->
             if (input != null && input == sector) {
                 return@map ResourcesCompat.getDrawable(getApplication<Application>().getResources(), R.drawable.ic_circle_with_aura_blue, theme)
@@ -100,25 +84,9 @@ class MainViewModel : AndroidViewModel {
     }
 
     public fun observeCenter() : LiveData<Float> = liveCenter
-
-    public fun observeNorthSector() : LiveData<Float> = liveNorthSector
-
-    public fun observeNorthEastSector() : LiveData<Float> = liveNorthEastSector
-
-    public fun observeEastSector() : LiveData<Float> = liveEastSector
-
-    public fun observeSouthEastSector() : LiveData<Float> = liveSouthEastSector
-
-    public fun observeSouthSector() : LiveData<Float> = liveSouthSector
-
-    public fun observeSouthWestSector() : LiveData<Float> = liveSouthWestSector
-
-    public fun observeWestSector() : LiveData<Float> = liveWestSector
-
-    public fun observeNorthWestSector() : LiveData<Float> = liveNorthWestSector
     //region Flapper and Wheel
     public fun toggleWheel() {
-        if (java.lang.Boolean.TRUE == liveRotateWheel.getValue()) {
+        if (liveRotateWheel.getValue() == true) {
             Log.d(TAG, "toggleWheel true")
             liveRotateWheel.setValue(false)
             startWheel()
@@ -129,7 +97,7 @@ class MainViewModel : AndroidViewModel {
     }
 
     public fun toggleFlapper() {
-        if (java.lang.Boolean.TRUE == liveRotateFlapper.getValue()) {
+        if (liveRotateFlapper.getValue() == true) {
             Log.d(TAG, "toggleFlapper true")
             liveRotateFlapper.setValue(false)
             startFlapper()
@@ -145,13 +113,9 @@ class MainViewModel : AndroidViewModel {
         return if (isPlay == true) pause else play
     }
 
-    public fun observeWheel() : LiveData<Boolean> {
-        return liveRotateWheel
-    }
+    public fun observeWheel() : LiveData<Boolean> = liveRotateWheel
 
-    public fun observeFlapper() : LiveData<Boolean> {
-        return liveRotateFlapper
-    }
+    public fun observeFlapper() : LiveData<Boolean> = liveRotateFlapper
     //endregion
     override fun onCleared() {
         super.onCleared()

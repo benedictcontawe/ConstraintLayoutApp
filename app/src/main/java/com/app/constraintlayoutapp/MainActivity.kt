@@ -43,15 +43,25 @@ public class MainActivity : AppCompatActivity(), OnClickListener {
         viewModel.observeFlapper(6, getTheme()).observe(this@MainActivity) { drawable : Drawable? -> binder?.imageViewSouthWest?.setImageDrawable(drawable) }
         viewModel.observeFlapper(7, getTheme()).observe(this@MainActivity) { drawable : Drawable? -> binder?.imageViewWest?.setImageDrawable(drawable) }
         viewModel.observeFlapper(8, getTheme()).observe(this@MainActivity) { drawable : Drawable? -> binder?.imageViewNorthWest?.setImageDrawable(drawable) }
-        viewModel.observeCenter().observe(this@MainActivity) { angle : Float -> setAnimateRotate(binder?.imageViewCenter, angle) }
-        viewModel.observeNorthSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorth, angle) }
-        viewModel.observeNorthEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorthEast, angle) }
-        viewModel.observeEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewEast, angle) }
-        viewModel.observeSouthEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouthEast, angle) }
-        viewModel.observeSouthSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouth, angle) }
-        viewModel.observeSouthWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouthWest, angle) }
-        viewModel.observeWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewWest, angle) }
-        viewModel.observeNorthWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorthWest, angle) }
+        viewModel.observeCenter().observe(this@MainActivity) { angle : Float ->
+            setAnimateRotate(binder?.imageViewCenter, angle)
+            setAnimateAngle(binder?.imageViewNorth, angle);
+            setAnimateAngle(binder?.imageViewNorthEast, angle + 45f);
+            setAnimateAngle(binder?.imageViewEast, angle + 90f);
+            setAnimateAngle(binder?.imageViewSouthEast, angle + 135f);
+            setAnimateAngle(binder?.imageViewSouth, angle + 180f);
+            setAnimateAngle(binder?.imageViewSouthWest, angle + 225f);
+            setAnimateAngle(binder?.imageViewWest, angle + 270f);
+            setAnimateAngle(binder?.imageViewNorthWest, angle + 315f);
+        }
+        //viewModel.observeNorthSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorth, angle) }
+        //viewModel.observeNorthEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorthEast, angle) }
+        //viewModel.observeEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewEast, angle) }
+        //viewModel.observeSouthEastSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouthEast, angle) }
+        //viewModel.observeSouthSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouth, angle) }
+        //viewModel.observeSouthWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewSouthWest, angle) }
+        //viewModel.observeWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewWest, angle) }
+        //viewModel.observeNorthWestSector().observe(this@MainActivity) { angle : Float -> setAnimateAngle(binder?.imageViewNorthWest, angle) }
         viewModel.observeWheel().observe(this@MainActivity, object : Observer<Boolean?> {
             override fun onChanged(isRotate : Boolean?) {
                 binder?.floatingActionButtonWheel?.setImageDrawable(viewModel.getAnimatedVectorDrawableCompat(isRotate!!))
@@ -98,27 +108,47 @@ public class MainActivity : AppCompatActivity(), OnClickListener {
         image.setLayoutParams(layoutParams)
     }
 
-    private fun setAnimateAngle(imageView: ShapeableImageView?, angle: Float) {
-        val oldLayoutParams = imageView?.layoutParams as LayoutParams
+    private fun setAnimateAngle(imageView : ShapeableImageView?, angle : Float) {
+        val oldLayoutParams = imageView?.getLayoutParams() as LayoutParams
+        val valueAnimator : ValueAnimator
         Log.d(TAG,"setAnimateAngle " + oldLayoutParams.circleAngle + " " + angle)
-        val valueAnimator : ValueAnimator =
-            if (oldLayoutParams.circleAngle < angle)
-                ValueAnimator.ofFloat(oldLayoutParams.circleAngle, angle)
-            else
-                ValueAnimator.ofFloat(oldLayoutParams.circleAngle, 360 + angle)
+        val startAngle : Float = oldLayoutParams.circleAngle % 360
+        var endAngle : Float = angle % 360
+        if (endAngle < startAngle) endAngle += 360f
+        valueAnimator = ValueAnimator.ofFloat(startAngle, endAngle)
         valueAnimator.setDuration(500L)
+        valueAnimator.addListener(object : Animator.AnimatorListener {
+            override fun onAnimationStart(animation : Animator) {
+
+            }
+
+            override fun onAnimationEnd(animation : Animator) {
+                val newAngle : Float = angle % 360
+                val newLayoutParams = imageView.getLayoutParams() as LayoutParams
+                newLayoutParams.circleAngle = newAngle
+                imageView.setLayoutParams(newLayoutParams)
+                Log.d(TAG,"onAnimationEnd $newAngle")
+            }
+
+            override fun onAnimationCancel(animation : Animator) {
+
+            }
+
+            override fun onAnimationRepeat(animation : Animator) {
+
+            }
+        })
         valueAnimator.addUpdateListener(object : ValueAnimator.AnimatorUpdateListener {
             override fun onAnimationUpdate(animation : ValueAnimator) {
                 val newAngle : Float = animation.getAnimatedValue() as Float
                 val newLayoutParams : LayoutParams = imageView.layoutParams as LayoutParams
-                if (newAngle < 360) newLayoutParams.circleAngle = newAngle
-                else newLayoutParams.circleAngle = 360 - newAngle
+                newLayoutParams.circleAngle = newAngle
                 imageView.setLayoutParams(newLayoutParams)
                 Log.d(TAG, "onAnimationUpdate " + newLayoutParams.circleAngle)
             }
         })
-        valueAnimator.interpolator = LinearInterpolator()
-        valueAnimator.repeatCount = 0
+        valueAnimator.setInterpolator(LinearInterpolator())
+        valueAnimator.setRepeatCount(0)
         valueAnimator.start()
     }
 
